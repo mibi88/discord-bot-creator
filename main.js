@@ -422,8 +422,7 @@ window.addEventListener("resize", onresize, false);
 onresize();
 
 const save = function() {
-    const serializer = new Blockly.serialization.blocks.BlockSerializer();
-    const state = serializer.save(workspace);
+    const state = Blockly.serialization.workspaces.save(workspace);
     document.getElementById("out").readOnly = true;
     document.getElementById("out").value = JSON.stringify(state, null, 4);
     document.getElementById("dataio").style.display = "block";
