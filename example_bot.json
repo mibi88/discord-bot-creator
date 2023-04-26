@@ -1,0 +1,127 @@
+{
+    "languageVersion": 0,
+    "blocks": [
+        {
+            "type": "on_ready",
+            "id": "wNg$.OHBU~M_1!Pi;c1a",
+            "x": 288,
+            "y": 180,
+            "icons": {
+                "comment": {
+                    "text": "When the bot is ready to grab and send messages !",
+                    "pinned": true,
+                    "height": 78,
+                    "width": 160
+                }
+            },
+            "inputs": {
+                "DO": {
+                    "block": {
+                        "type": "text_print",
+                        "id": "|C|2,BV81$9Ul8DjgKvR",
+                        "inputs": {
+                            "TEXT": {
+                                "block": {
+                                    "type": "text",
+                                    "id": "*:Z,Eh)xpXRewJo6B=ab",
+                                    "fields": {
+                                        "TEXT": "Ready !"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "next": {
+                "block": {
+                    "type": "on_message",
+                    "id": "x{M3}kUkFZ;-ooNn-Z(H",
+                    "icons": {
+                        "comment": {
+                            "text": "When someone send a message in a room where the bot has access to.",
+                            "pinned": true,
+                            "height": 80,
+                            "width": 160
+                        }
+                    },
+                    "inputs": {
+                        "DO": {
+                            "block": {
+                                "type": "controls_if",
+                                "id": "0^5F[gn):#M|2NyOLN3,",
+                                "inputs": {
+                                    "IF0": {
+                                        "block": {
+                                            "type": "logic_compare",
+                                            "id": "x])pwkv-Xt||7Px/RdC7",
+                                            "fields": {
+                                                "OP": "NEQ"
+                                            },
+                                            "inputs": {
+                                                "A": {
+                                                    "block": {
+                                                        "type": "get_botuser",
+                                                        "id": "G,D+fb*si4IZuLp]sKjw"
+                                                    }
+                                                },
+                                                "B": {
+                                                    "block": {
+                                                        "type": "get_messageuser",
+                                                        "id": "`AN_BB1/Mt7UDE.W2B#5"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "DO0": {
+                                        "block": {
+                                            "type": "send_message",
+                                            "id": "~luN~}7O1`.pDOa_s!68",
+                                            "inputs": {
+                                                "MESSAGE": {
+                                                    "block": {
+                                                        "type": "text",
+                                                        "id": "Q=Q+Y/Y1xe]ConW^e{ke",
+                                                        "fields": {
+                                                            "TEXT": "Ok ..."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "next": {
+                        "block": {
+                            "type": "start_bot",
+                            "id": "I1GDP4kOGLiTk.4Gf9m(",
+                            "icons": {
+                                "comment": {
+                                    "text": "Start the bot. Replace the string with your token.",
+                                    "pinned": true,
+                                    "height": 80,
+                                    "width": 160
+                                }
+                            },
+                            "inputs": {
+                                "TOKEN": {
+                                    "block": {
+                                        "type": "text",
+                                        "id": "wVS)+lE[B~*;z~yA_q`j",
+                                        "fields": {
+                                            "TEXT": "Token here please"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

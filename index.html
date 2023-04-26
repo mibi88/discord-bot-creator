@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Discord bot creator</title>
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blocks_compressed.js"></script>
+        <script src="blockly/python_compressed.js"></script>
+        <script src="blockly/msg/en.js"></script>
+        <style media="screen">
+            #dataio {
+                position: absolute;
+                top: 20%;
+                left: 20%;
+                width: 60%;
+                height: 60%;
+                border: 3px groove;
+                background-color: #FFFFFF;
+            }
+            button {
+                display: inline;
+            }
+        </style>
+    </head>
+    <header style="height: 25px;">
+        <button type="button" name="load" onclick="load();">Load project</button>
+        <button type="button" name="save" onclick="save();">Save project</button>
+        <button type="button" name="export" onclick="export_py();">Export to python 3</button>
+    </header>
+    <body style="width: 100%; height: 100%; overflow: hidden" id="blockly_area">
+        <div id="blockly_div" style="position: absolute; left: 0px"></div>
+        <div id="dataio" style="display: none;">
+            <textarea id="out" style="width: 99%; height: 90%; resize: none;"></textarea>
+            <div id="popupbuttons">
+                <button type="button" name="close" onclick="document.getElementById('dataio').style.display = 'none';">Close</button>
+                <button type="button" name="load" id="load" onclick="load2();">Load</button>
+            </div>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>
