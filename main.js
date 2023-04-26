@@ -62,7 +62,7 @@ Blockly.Python["get_messagecontent"] = function(block) {
     Blockly.Python.definitions_["_intents.message_content_=_True"] = "_intents.message_content = True";
     Blockly.Python.definitions_["_client_=_discord.Client(intents_=__intents)"] = "_client = discord.Client(intents = _intents)";
     Blockly.Python.definitions_["_message_=_None"] = "_message = None";
-    var code = "str(_message.content) if _message else \"\"";
+    var code = "(str(_message.content) if _message else \"\")";
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -79,7 +79,7 @@ Blockly.Python["get_messageuser"] = function(block) {
     Blockly.Python.definitions_["_intents.message_content_=_True"] = "_intents.message_content = True";
     Blockly.Python.definitions_["_client_=_discord.Client(intents_=__intents)"] = "_client = discord.Client(intents = _intents)";
     Blockly.Python.definitions_["_message_=_None"] = "_message = None";
-    var code = "_message.author if _message else None";
+    var code = "(_message.author if _message else None)";
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
