@@ -439,10 +439,9 @@ const load = function() {
 }
 
 const load2 = function() {
-    const serializer = new Blockly.serialization.blocks.BlockSerializer();
     try {
         var data = JSON.parse(document.getElementById('out').value);
-        if(data != null) serializer.load(data, workspace);
+        if(data != null) Blockly.serialization.workspaces.load(data, workspace);
     } catch (error) {
         window.alert("Oh oh something went wrong !\n" + error);
     }
